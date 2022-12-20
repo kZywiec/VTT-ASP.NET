@@ -1,0 +1,66 @@
+﻿@model List<VTT.Models.Character>
+
+@{
+    //Layout = null;
+    ViewData["Title"] = "Characters";
+}
+
+
+    <h1>Characters list</h1>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Race</th>
+        </tr>
+        @foreach (var character in Model)
+        {
+            <tr>
+                <td>@character.Name</td>
+                <td>@character.Sex</td>
+                <td>@character.Age</td>
+                <td>@character.Race</td>
+                <td>
+                    <a class="btn" style="background-color:blue; color:white" asp-controller="Character" asp-action="EditForm" asp-route-id=@character.ID>Edit</a>
+                </td>
+                <td>
+                <a class="btn" style="background-color:red; color:white" asp-controller="Character" asp-action="Delete" asp-route-id=@character.ID>Delete</a>
+                </td>
+
+            </tr>
+        }
+    <form action="AddCharacter">
+        <tr>
+            <td>
+                <input type="text" name="Name" value="Name" required />
+            </td>
+            <td>
+                <select name="Sex" required>
+                    <option value='Male'>M</option>
+                    <option value='Female'>F</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" name="Name" required />
+            </td>
+            <td>
+                <select name="Race" required>
+                    <option value='Elf'>Elf</option>
+                    <option value='Half-Elf'>Half-Elf</option>
+                    <option value='Halfling'>Halfling</option>
+                    <option value='Dwarf'>Dwarf</option>
+                    <option value='Witcher'>Witcher</option>
+                    <option value='Human'>Human</option>
+                    <option value='Gnome'>Gnome</option>
+                    <option value='Doppler'>Doppler</option>
+                    <option value='Vran'>Vran</option>
+                    <option value='Werebbubb'>Werebbubb</option>
+                </select>
+            </td>
+            <td><input class="btn" style="background-color:green; color:white" type="submit" value="Add" asp-controller="Character" asp-action="AddCharacter"/></td>
+        </tr>
+    </form>
+    </table>
+
+

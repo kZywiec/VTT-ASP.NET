@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Characters - Edit";
+}
+
+@model Character
+<h1>Add new character</h1>
+<form asp-action="EditForm" method="post">
+    <div asp-validation-summary="All"></div>
+    <div style="display:flex">
+        <div>
+            <table>
+                <tr>
+                    <td>Intelligence:</td>
+                    <td><input type="number" asp-for="Intelligence" /></td>
+                </tr>
+                <tr>
+                    <td>Reflexes:</td>
+                    <td><input type="number" asp-for="Reflexes" /></td>
+                </tr>
+                <tr>
+                    <td>Dexterity:</td>
+                    <td><input type="number" asp-for="Dexterity" /></td>
+                </tr>
+                <tr>
+                    <td>Body:</td>
+                    <td><input type="number" asp-for="Body" /></td>
+                </tr>
+                <tr>
+                    <td>Speed:</td>
+                    <td><input type="number" asp-for="Speed" /></td>
+                </tr>
+                <tr>
+                    <td>Emphaty:</td>
+                    <td><input type="number" asp-for="Emphaty" /></td>
+                </tr>
+                <tr>
+                    <td>Craft:</td>
+                    <td><input type="number" asp-for="Craft" /></td>
+                </tr>
+                <tr>
+                    <td>Luck:</td>
+                    <td><input type="number" asp-for="Luck" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="width:175px">
+            <input required type="text" asp-for="Name" />
+            <br />
+            <div style=" text-align:center; position:relative; left:15%; border:solid; width:120px; height:120px">
+                Image <br \>(in future)
+            </div>
+            <select required asp-for="Race">
+                <option value='Elf'>Elf</option>
+                <option value='Half-Elf'>Half-Elf</option>
+                <option value='Halfling'>Halfling</option>
+                <option value='Dwarf'>Dwarf</option>
+                <option value='Witcher'>Witcher</option>
+                <option value='Human'>Human</option>
+                <option value='Gnome'>Witcher</option>
+                <option value='Doppler'>Human</option>
+                <option value='Vran'>Witcher</option>
+                <option value='Werebbubb'>Human</option>
+            </select>
+
+            <select required asp-for="Sex">
+                <option value='Male'>M</option>
+                <option value='Female'>F</option>
+            </select>
+            <input style="width:50px" type="number" asp-for="Age" />
+            <br />
+            <input type="text" asp-for="Homeland" />
+            <br />
+            <input type="text" asp-for="Social_Standing" />
+
+        </div>
+    </div>
+
+    <h5><input type="submit" value="Add" /></h5>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Character" asp-action="List">
+        <h5>Back to list.</h5>
+    </a>
+</form>
+
+
+    

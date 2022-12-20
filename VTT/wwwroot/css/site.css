@@ -16,3 +16,54 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin:5px;
+}
+
+.app {
+    max-height: 100%;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 3px 0;
+    padding: 0.5em;
+    margin-bottom: 8px;
+}
+
+.join-game {
+    position: relative;
+    height: auto;
+    width: 960px;
+    top: calc(50% - 300px);
+    margin: 0 auto;
+}
+
+.flexrow{
+    flex:1;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.right {
+    width:50%;
+    margin-left: 8px;
+    flex:1
+}
+.left {
+    width: 50%;
+    justify-content: space-between;
+}
+
+.world-description {
+    flex: 1;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 0.5em;
+}
