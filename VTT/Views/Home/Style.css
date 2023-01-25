@@ -1,0 +1,25 @@
+﻿h1 {
+    border-bottom: 2px solid;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+form-def {
+    margin: 0;
+    background: url(../ui/denim-dark-090.png) repeat;
+    border: 2px solid;
+    box-shadow: 0 0 10px;
+    color: var(--color-text-light-highlight);
+}
+
+form-group {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3px 0;
+    align-items: center;
+}

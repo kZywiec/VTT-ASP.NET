@@ -15,6 +15,7 @@ namespace VTT.Controllers
 
         public IActionResult Index()
         {
+            JournalEntry journalEntry = new JournalEntry(1, "Text", "Note01");
             return View();
         }
 

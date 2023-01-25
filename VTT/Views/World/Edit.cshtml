@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Edit World";
+}
+<body>
+<div id="world-config" class="app window-app form" data-appid="4" style="z-index: 100; width: 600px; left: 441px; top: 317.5px; height: 560px;">
+        <header class="window-header flexrow draggable" style="display:flex; flex-direction:row; justify-content:space-between">
+        <h4 class="window-title">Edit World: Wiedźmin</h4>
+        <a style="justify-self:right;" class="header-button close"><i class="fas fa-times"></i>Close</a>
+    </header>
+
+    <section >
+            <form method="POST" autocomplete="off" enctype="multipart/form-data" novalidate="" style="display:flex; flex-direction:column;">
+            <div class="form-group">
+                <label>World Title</label>
+                <div class="form-fields">
+                    <input type="text" name="title" value="Wiedźmin" placeholder="World Title" required="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Game System</label>
+                <div class="form-fields">
+                    <select name="system" disabled="">
+                        <option value=""></option>
+                        <option value="TheWitcherTRPG" selected="">TheWitcherTRPG - fvtt</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group banner-image">
+                <label>Background Image</label>
+                <div class="form-fields">
+
+                    <button type="button" class="file-picker" data-type="image" data-target="background" title="Browse Files" tabindex="-1">
+                        <i class="fas fa-file-import fa-fw"></i>
+                    </button>
+                    <input type="text" name="background" placeholder="path/image.png" value="pobrane-transformed.jpeg" data-dtype="String">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Next Session</label>
+                <div  class="form-fields">
+                    <input type="date" name="nextSession" value="2023-01-09">
+                    <input type="time" name="nextSession" value="19:00:00">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Reset User Passwords</label>
+                <input type="checkbox" name="resetKeys">
+            </div>
+
+            <div class="form-group-stacked">
+                <label class="world-desc">World Description</label>
+                <div>
+                        <input style="height:234px; width:580px;" type="text" />
+                </div>
+            </div>
+
+                <button type="submit" title="Update World" style="height:34px; width:584px; margin-top:5px;">
+            Update World
+            </button>
+        </form>
+    </section>
+</div>
+</body>

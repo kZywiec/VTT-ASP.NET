@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "World Join";
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VTT</title>
+    <link rel="stylesheet" href="~/l
+ib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/VTT.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <form class="join-game" autocomplete="off">
+        <header id="world-title" class="app">
+            <h1>Witcher</h1>
+        </header>
+        <section class="flexrow" style="display:flex">
+            <div class="left flexcol">
+                <div class="app">
+                    <h1>Join Game Session</h1>
+                    <div class="form-group">
+                        <label> User Login</label>
+                        <input name="Login" placeholder="Login">
+                    </div>
+                    <div class="form-group">
+                        <label> User Password</label>
+                        <input type="password" name="password" placeholder="Password" value="" autocomplete="off">
+                    </div>
+                    <button type="button" name="join" title="Join Game Session">
+                        Join Game Session
+                    </button>
+                </div>
+
+                <div class="app">
+                    <h1>Game Details</h1>
+                    <div class="form-group">
+                        <label> Next Session<span id="next-tz"> (CET)</span></label>
+                        <div class="form-fields">
+                            <input type="date" id="next-date" value="2022-12-04" disabled="">
+                            <input type="time" id="next-time" value="19:30:00" disabled="">
+                        </div>
+                    </div>
+                </div>
+                <div class="app">
+                    <h1>World Menu</h1>
+                    <div class="form-label">
+                        <label>Access Password</label>
+                        <input type="password" name="accessPassword" value="" autocomplete="current-password">
+                    </div>
+                    <button type="button" name="shutdown" title="Edit World">
+                        Edit World
+                    </button>
+                </div>
+            </div>
+
+            <div class="right flexcol">
+                <div class="world-description app">
+                    <h1>World Description</h1>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
