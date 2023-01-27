@@ -1,40 +1,37 @@
-﻿using VTT.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using static System.Reflection.Metadata.BlobBuilder;
 using System.Collections;
 using Microsoft.VisualBasic.FileIO;
 using System.Linq;
+using VTT.Models.Entities;
 
 namespace VTT.Controllers
 {
     public class CharacterController : Controller
     {
         public static List<Character> characters = new List<Character> {
-            new Character()
+            new Character(1)
             {
-                ID = 1, 
-                Name = "Geralt",
-                Sex = "Male",
-                Age=112, 
-                Race = "Witcher" 
+                name = "Geralt",
+                sex = "Male",
+                age=112, 
+                race = "Witcher" 
             },
 
-            new Character()
-            {
-                ID = 2, 
-                Name = "Yennefer",
-                Sex = "Female",
-                Age=85,
-                Race = "Human"
+            new Character(2)
+            { 
+                name = "Yennefer",
+                sex = "Female",
+                age=85,
+                race = "Human"
             },
 
-            new Character()
+            new Character(3)
             {
-                ID = 3, 
-                Name = "Zoltan Chivay",
-                Sex = "Male",
-                Age=62,
-                Race = "Dwarf"
+                name = "Zoltan Chivay",
+                sex = "Male",
+                age=62,
+                race = "Dwarf"
             }
         };
 
@@ -52,7 +49,7 @@ namespace VTT.Controllers
         public IActionResult AddCharacter(Character character)
         {
             Counter++;
-            character.ID = Counter;
+            character.id = Counter;
             characters.Add(character);
             return View("List", characters);
         }
@@ -62,7 +59,7 @@ namespace VTT.Controllers
         {
             if (ModelState.IsValid)
             {
-                characters[character.ID-1] = character;
+                characters[character.id-1] = character;
                 return View("List", characters);
             }
             else
@@ -72,14 +69,14 @@ namespace VTT.Controllers
         [HttpGet]
         public IActionResult EditForm(int id)
         {
-            Character character = characters.Single(character => character.ID == id);
+            Character character = characters.Single(character => character.id == id);
             return View(character);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            Character character = characters.Single(character => character.ID == id);
+            Character character = characters.Single(character => character.id == id);
             characters.Remove(character);
             return View("List", characters);
         }

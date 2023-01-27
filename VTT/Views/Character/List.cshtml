@@ -1,4 +1,4 @@
-﻿@model List<VTT.Models.Character>
+﻿@model List<VTT.Models.Entities.Character>
 
 @{
     //Layout = null;
@@ -17,15 +17,15 @@
         @foreach (var character in Model)
         {
             <tr>
-                <td>@character.Name</td>
-                <td>@character.Sex</td>
-                <td>@character.Age</td>
-                <td>@character.Race</td>
+                <td>@character.name</td>
+                <td>@character.sex</td>
+                <td>@character.age</td>
+                <td>@character.race</td>
                 <td>
-                    <a class="btn" style="background-color:blue; color:white" asp-controller="Character" asp-action="EditForm" asp-route-id=@character.ID>Edit</a>
+                    <a class="btn" style="background-color:blue; color:white" asp-controller="Character" asp-action="EditForm" asp-route-id=@character.id>Edit</a>
                 </td>
                 <td>
-                <a class="btn" style="background-color:red; color:white" asp-controller="Character" asp-action="Delete" asp-route-id=@character.ID>Delete</a>
+                <a class="btn" style="background-color:red; color:white" asp-controller="Character" asp-action="Delete" asp-route-id=@character.id>Delete</a>
                 </td>
 
             </tr>

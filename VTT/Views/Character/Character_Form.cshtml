@@ -2,7 +2,7 @@
     ViewData["Title"] = "Characters - Edit";
 }
 
-@model Character
+@model VTT.Models.Entities.Character
 <h1>Add new character</h1>
 <form asp-action="EditForm" method="post">
     <div asp-validation-summary="All"></div>
@@ -11,46 +11,46 @@
             <table>
                 <tr>
                     <td>Intelligence:</td>
-                    <td><input type="number" asp-for="Intelligence" /></td>
+                    <td><input type="number" asp-for="intelligence" /></td>
                 </tr>
                 <tr>
                     <td>Reflexes:</td>
-                    <td><input type="number" asp-for="Reflexes" /></td>
+                    <td><input type="number" asp-for="reflexes" /></td>
                 </tr>
                 <tr>
                     <td>Dexterity:</td>
-                    <td><input type="number" asp-for="Dexterity" /></td>
+                    <td><input type="number" asp-for="dexterity" /></td>
                 </tr>
                 <tr>
                     <td>Body:</td>
-                    <td><input type="number" asp-for="Body" /></td>
+                    <td><input type="number" asp-for="body" /></td>
                 </tr>
                 <tr>
                     <td>Speed:</td>
-                    <td><input type="number" asp-for="Speed" /></td>
+                    <td><input type="number" asp-for="speed" /></td>
                 </tr>
                 <tr>
                     <td>Emphaty:</td>
-                    <td><input type="number" asp-for="Emphaty" /></td>
+                    <td><input type="number" asp-for="emphaty" /></td>
                 </tr>
                 <tr>
                     <td>Craft:</td>
-                    <td><input type="number" asp-for="Craft" /></td>
+                    <td><input type="number" asp-for="craft" /></td>
                 </tr>
                 <tr>
                     <td>Luck:</td>
-                    <td><input type="number" asp-for="Luck" /></td>
+                    <td><input type="number" asp-for="luck" /></td>
                 </tr>
             </table>
         </div>
 
         <div style="width:175px">
-            <input required type="text" asp-for="Name" />
+            <input required type="text" asp-for="name" />
             <br />
             <div style=" text-align:center; position:relative; left:15%; border:solid; width:120px; height:120px">
                 Image <br \>(in future)
             </div>
-            <select required asp-for="Race">
+            <select required asp-for="race">
                 <option value='Elf'>Elf</option>
                 <option value='Half-Elf'>Half-Elf</option>
                 <option value='Halfling'>Halfling</option>
@@ -63,15 +63,15 @@
                 <option value='Werebbubb'>Human</option>
             </select>
 
-            <select required asp-for="Sex">
+            <select required asp-for="sex">
                 <option value='Male'>M</option>
                 <option value='Female'>F</option>
             </select>
-            <input style="width:50px" type="number" asp-for="Age" />
+            <input style="width:50px" type="number" asp-for="age" />
             <br />
-            <input type="text" asp-for="Homeland" />
+            <input type="text" asp-for="homeland" />
             <br />
-            <input type="text" asp-for="Social_Standing" />
+            <input type="text" asp-for="social_standing" />
 
         </div>
     </div>
