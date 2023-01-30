@@ -111,8 +111,21 @@ namespace VTT.Controllers
             {
                 try
                 {
-                    _context.Update(world);
+                    var existingWorld = await _context.World.FindAsync(id);
+                    if (existingWorld == null)
+                    {
+                        return NotFound();
+                    }
+
+                    existingWorld.title = world.title;
+                    existingWorld.description = world.description;
+                    existingWorld.nextSessionDate = world.nextSessionDate;
+                    existingWorld.CreationDate = world.CreationDate;
+
+                    _context.World.Update(existingWorld);
                     await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {

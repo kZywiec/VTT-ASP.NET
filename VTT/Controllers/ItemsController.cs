@@ -139,19 +139,25 @@ namespace VTT.Controllers
             {
                 try
                 {
-                    _context.Update(item);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ItemExists(item.id))
+                    var existingItem = await _context.Item.FindAsync(id);
+                    if (existingItem == null)
                     {
                         return NotFound();
                     }
-                    else
-                    {
-                        throw;
-                    }
+
+                    existingItem.weight = item.weight;
+                    existingItem.name = item.name;
+                    existingItem.description = item.description;
+                    existingItem.cost = item.cost;
+                    existingItem.type_id = item.type_id;
+                    existingItem.availability_id = item.availability_id;
+                    existingItem.concealment_id = item.concealment_id;
+   
+
+                    _context.Item.Update(existingItem);
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
                 }
                 return RedirectToAction(nameof(Index));
             }

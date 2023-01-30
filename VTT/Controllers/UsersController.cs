@@ -100,8 +100,21 @@ namespace VTT.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    var existingUser = await _context.User.FindAsync(id);
+                    if (existingUser == null)
+                    {
+                        return NotFound();
+                    }
+
+                    existingUser.login = user.login;
+                    existingUser.password = user.password;
+                    existingUser.isAdmin = user.isAdmin;
+                    existingUser.CreationDate = user.CreationDate;
+
+                    _context.User.Update(existingUser);
                     await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
