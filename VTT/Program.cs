@@ -37,7 +37,7 @@ var serviceProvider = new ServiceCollection()
     .BuildServiceProvider();
 
 var _AppDbContext = serviceProvider.GetService<AppDbContext>();
-_AppDbContext.Database.EnsureDeleted();
+//_AppDbContext.Database.EnsureDeleted();
 _AppDbContext.Database.EnsureCreated();
 
 // Configure the HTTP request pipeline.
