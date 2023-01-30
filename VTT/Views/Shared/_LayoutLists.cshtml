@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VTT</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/VTT.styles.css" asp-append-version="true" />
+</head>
+<body style="height:90vh; background-image: url('https://steamuserimages-a.akamaihd.net/ugc/958613321554117129/19967ACDA6329E46EFDEDF9D0B4E14CEF7B9FF33/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=#000000&letterbox=false'); background-size: cover; background-position: center;">
+    <header>
+        <nav class="navbar navbar-toggleable-sm" style="display:flex; margin-left: 1%; margin-right: 1%; flex-direction:row; justify-content:space-between;">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="https://png2.cleanpng.com/sh/4b7c52f33f13d7e390f020d197ea42a9/L0KzQYm4UcE4N5h9j5H0aYP2gLBuTfR2dphqh9D8LXT1cbj2jwMuepDxfZ95bHH8ebBuTfdidZYyfNtsZT3nQn76mgN1NZJ1g59EYX7qPcXskvticaUyed5tLXvsc7y0jBZnNZJ1iJ87LUG6PYbphfZna2FpStUEZEGzPoWAUcA6Pmo5Sac9MkS4RIOBVcE5OmgziNDw/kisspng-dungeons-dragons-role-playing-game-dice-d2-syst-apk-yang-terkait-ald-kick-off-app-2-17-5beffc0d2c9d10.4710969415424542851827.png" style="width:75px; height:75x">
+            </a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">
+                <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/entry-door.svg" style=" width:75px; height:75x; border-radius: 50px;" />
+                </a>
+
+        </nav>
+    </header>
+    <section style=" display:flex; flex-direction:column;align-content:center; flex-wrap: wrap; margin: 5%;">
+        <div style="width:65%; padding:3%; display:flex; flex-direction: column; align-content: center; justify-content:center; flex-wrap:inherit;
+background-image:  url(https://img.freepik.com/free-photo/grunge-vintage-old-paper-background_1373-431.jpg?w=996&t=st=1675025256~exp=1675025856~hmac=0fdf0e65dcbdb1eab993759590b3bc8f49a71bf95c83861ac7891df638c9291a); background-size: cover; background-position: center; border-radius:25px; border: 2px solid; border-color:dimgray;">
+            
+            @RenderBody()
+            <form>
+                <button asp-controller="Home" asp-action="Index">Go Back</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-top footer text-muted" style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/65/25/64/1000_F_265256475_556ZDKMSenD9Xq1VekwNQZvcscXKeJGa.jpg') ">
+        <div class="container">
+            &copy; 2022 - VTT -
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

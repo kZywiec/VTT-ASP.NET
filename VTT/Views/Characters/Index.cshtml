@@ -1,0 +1,99 @@
+﻿@model IEnumerable<VTT.Models.Entities.Character>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutLists";
+    var worldsList = (List<VTT.Models.Entities.World>)ViewData["WorldsList"];
+}
+<div style="display:flex; justify-content:center;">
+    <h1 style="border-bottom: 2px solid; border-radius:25px; padding-left:0px; padding-right:0px; text-align:center; font-size:50px;">
+        • Characters •
+    </h1>
+</div>
+        @foreach (var world in worldsList)
+        {
+            <div style="width:100%; display:flex; flex-direction: column; justify-content:center; align-content:center; flex-wrap: inherit; ">
+                <div style="display:flex; flex-direction: row; justify-content:flex-start; align-content:center; flex-wrap:wrap; width: 90%;">
+                    <img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/castle.svg" style="height:75px; margin: 5px;  width: 75px;" />
+                     <div style="display:flex; flex-direction:column; flex-wrap:inherit; align-content:center; justify-content:center">
+                         <h1>From @world.title</h1>
+                        <p>
+                            <a asp-action="Create" asp-route-worldId="@world.id">
+                                Send a new hero to @world.title
+                            </a>
+                        </p>
+                    </div>
+                </div>
+        <div style="display:flex; flex-direction: row; align-content:center;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.sex)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.age)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.race)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.social_standing)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.homeland)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model) 
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.sex)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.age)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.race)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.social_standing)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.homeland)
+                                        </td>
+                                        <td> 
+                                            <div>
+                                                <a asp-action="StartUp" asp-controller="Items" asp-route-character_id="@item.id">
+                                                    <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/skoll/open-chest.svg"/>
+                                                </a>
+                                                
+                                                <a asp-action="Edit" asp-route-id="@item.id">
+                                                <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/quill-ink.svg" />
+                                                </a>
+                                                
+                                                <a asp-action="Details" asp-route-id="@item.id">
+                                                    <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/skoll/read.svg"/>
+                                                </a> 
+                                                
+                                                <a asp-action="Delete" asp-route-id="@item.id">
+                                                <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/harry-potter-skull.svg"/>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        }

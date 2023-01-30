@@ -1,0 +1,56 @@
+﻿@model VTT.Models.Entities.Item
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_LayoutForms";
+}
+
+<h1>Edit the @Model.name</h1>
+<hr />
+        <form asp-action="Edit" method="post" style="display:flex; flex-direction:column; justify-content:center; align-content:center; flex-wrap:wrap;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="type_id" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <select asp-for="type_id" class="form-control" asp-items="ViewBag.type_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="weight" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <input asp-for="weight" class="form-control" />
+                <span asp-validation-for="weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cost" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <input asp-for="cost" class="form-control" />
+                <span asp-validation-for="cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="availability_id" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <select asp-for="availability_id" class="form-control" asp-items="ViewBag.availability_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="concealment_id" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <select asp-for="concealment_id" class="form-control" asp-items="ViewBag.concealment_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div>
+        <input type="submit" value="Save" class="btn btn-primary" style="width:100%" />
+            </div>
+        </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

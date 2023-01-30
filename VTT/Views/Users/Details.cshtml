@@ -1,0 +1,39 @@
+﻿@model VTT.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_LayoutForms";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User @Model.login</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.login)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.login)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isAdmin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isAdmin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+    </dl>
+</div>

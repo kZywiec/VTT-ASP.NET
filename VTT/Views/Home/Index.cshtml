@@ -1,28 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-    //Layout = null;
+﻿@model VTT.Models.Entities.User
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 }
 
+<section style="height:100%; display: flex; justify-content:center; align-content:space-around; flex-wrap:wrap;">
 
-<link type="text/css" rel="stylesheet" href="Home/Style.css">
+@if ((bool)ViewData["isAdmin"])
+{
+        <button type="button" onclick="location.href='@Url.Action("Index","Users")'" 
+        style="height: fit-content; margin:3vw; border-radius: 30px; padding: 1px;
+        background-image: url('https://64.media.tumblr.com/79f2d5b3b17bfc869cb63e5d82e22a55/tumblr_oskrhxZMtL1wtj4p6o1_500.gifv'); background-size: cover; background-position: center;">
 
-<body class="auth" >
-    <section style="padding:5px; border:2px solid;">
-        <h1 style="border-bottom: 2px solid;">Virtual Tabletop • Game Master Access</h1>
-        <section style="display:flex; flex-direction:row;">
-            <form method="post" autocomplete="off" style="display:flex; flex-direction:column;">
-                <div class="form-group" style="display:flex; flex-direction:column;">
-                    <h2>Administrator Verification</h2>
-                    <input name="adminPassword" type="text" placeholder="Login">
-                    <input name="adminLogin" type="password" placeholder="Password">
-                </div>
-                <p>You must provide the administrator password in order to access application setup.</p>
-                <div class="form-group">
-                    <button type="submit" name="action" value="adminAuth">Submit</button>
-                </div>
-            </form>
-            <div>
-            </div>
-        </section>
-    </section>
-</body>
+            <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/skills.svg" style="height: 300px; width: 300px; border-radius: 30px; opacity:0.8;" />
+        <h2 style="color: whitesmoke;">Menage Users</h2>
+    </button>
+}
+    <button type="button" onclick="location.href='@Url.Action("Index","Worlds")'" 
+    style="height: fit-content; margin:3vw; border-radius: 30px; padding: 1px;
+    background-image: url('https://64.media.tumblr.com/79f2d5b3b17bfc869cb63e5d82e22a55/tumblr_oskrhxZMtL1wtj4p6o1_500.gifv'); background-size: cover; background-position: center;">
+
+        <img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/castle.svg" style="height: 300px; width: 300px; border-radius: 30px; opacity:0.8;" />
+        <h2 style="color: whitesmoke;">Menage Worlds</h2>
+    </button>
+
+    <button type="button" onclick="location.href='@Url.Action("Index","Characters")'" 
+    style="height: fit-content; margin:3vw; border-radius: 30px; padding: 1px;
+    background-image: url('https://64.media.tumblr.com/79f2d5b3b17bfc869cb63e5d82e22a55/tumblr_oskrhxZMtL1wtj4p6o1_500.gifv'); background-size: cover; background-position: center;">
+        <img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/barbute.svg" style="height: 300px; width: 300px; border-radius: 30px; opacity:0.8;" />
+        <h2 style="color: whitesmoke;">Menage Characters</h2>
+    </button>
+</section>

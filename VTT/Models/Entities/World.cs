@@ -7,15 +7,24 @@ namespace VTT.Models.Entities
     public class World : EntityBase
     {
         [Required]
-        public string title;
+        [StringLength(30)]
+        public string title { get; set; }
 
-        public string description;
-        
-        public DateTime nextSessionDate;
+        [Required]
+        public string description { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime nextSessionDate { get; set; }
 
         //relationships
-        public List<User_World_Character> Users_Worlds_Characters { get; set; }
+        [HiddenInput]
+        public List<User_World> Users_Worlds { get; set; }
+
+        public World()
+        {
+            Users_Worlds = new List<User_World>();
+        }
 
     }
 }

@@ -29,12 +29,7 @@ namespace VTT.Models.Entities
         private int range;                   
         private int enhancements;
 
-        public Weapon(Character_Item character_Item, Item_Type type, int type_id, int quantity, float weight, float cost, Item_Availability availability, int availability_id, Item_Concealmen concealmen, int concealment_id, string description) : base(character_Item, type, type_id, quantity, weight, cost, availability, availability_id, concealmen, concealment_id, description)
-        {
-        }
-
-
-
+   
 
 
 
@@ -119,10 +114,6 @@ namespace VTT.Models.Entities
 
         // ---|*|CONSTRUCTORS|*|---
 
-        //public Weapon(int id, int quantity, float weight, float cost, int availability, int concealment, string description) 
-        //    : base(id, "Weapon", quantity, weight, cost, availability, concealment, description)
-        //{
 
-        //}
     }
 }

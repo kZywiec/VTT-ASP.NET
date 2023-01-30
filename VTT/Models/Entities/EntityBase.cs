@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace VTT.Models.Entities
 {
@@ -9,6 +10,8 @@ namespace VTT.Models.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
+
+        [HiddenInput]
         public DateTime CreationDate { get; set; }
 
         public EntityBase()

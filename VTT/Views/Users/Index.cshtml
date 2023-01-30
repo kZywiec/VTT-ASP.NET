@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VTT.Models.Entities.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutLists";
+}
+<div style="display:flex; justify-content:center;">
+    <h1 style="border-bottom: 2px solid; border-radius:25px; padding-left:0px; padding-right:0px; text-align:center; font-size:50px;">• Users •</h1>
+</div>
+<div style="display:flex; flex-direction: row; align-content:center; width:95%">
+<table class="table" style="align-content:center;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isAdmin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/quill-ink.svg" />
+                    </a>
+                    |
+                    <a asp-action="Details" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/skoll/read.svg" />
+                    </a>
+                    |
+                    <a asp-action="Delete" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/harry-potter-skull.svg" />
+                    </a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

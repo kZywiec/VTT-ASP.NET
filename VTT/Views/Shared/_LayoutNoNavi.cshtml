@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VTT</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/VTT.styles.css" asp-append-version="true" />
+</head>
+<body style="background-image: url('https://64.media.tumblr.com/79f2d5b3b17bfc869cb63e5d82e22a55/tumblr_oskrhxZMtL1wtj4p6o1_500.gifv'); background-size: cover; background-position: center;">
+        <div class="container" style="  display: flex; justify-content: center; align-items: center; height:95vh; width:100vw; color:wheat">
+                @RenderBody()
+        </div>
+    <footer class="footer text-muted" style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/65/25/64/1000_F_265256475_556ZDKMSenD9Xq1VekwNQZvcscXKeJGa.jpg')">
+        <div class="container">
+            &copy; 2022 - VTT - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

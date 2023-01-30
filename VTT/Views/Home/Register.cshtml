@@ -1,0 +1,51 @@
+﻿@model VTT.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_LayoutNoNavi";
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+    <div style="padding:5px; border:2px solid; border-radius:20px; height:fit-content; background-image: url('https://img.freepik.com/free-photo/black-smooth-textured-paper_53876-96064.jpg?w=996&t=st=1674823737~exp=1674824337~hmac=2ae019ee8085042d0542588a230b54207c60f5524002e06c71fb52204fe68e6c');  background-size: cover; background-position: center;">
+            
+        <h1 style="border-bottom: 2px solid; border-radius:20px; text-align:center; ">• Virtual Tabletop App •</h1>
+
+        <div style="display:flex; flex-direction:row; width:100%; text-align:center;">
+            <form action="Register" method="post" autocomplete="off" class="auth-form" style="width: 100%;">
+                
+                <h4>Wellcome, Join us Stranger.</h4>
+
+                <div class="form-group" style="display:flex; flex-direction:column; justify-content:center; align-content:center; width:100%; flex-wrap:wrap;">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="login" class="control-label"></label>
+                        <input asp-for="login" class="form-control" placeholder="Login" style="width: 50%; margin: 2px; border-radius:20px; text-align:center; color:wheat; background-color: black;" />
+                    </div>
+                    <span asp-validation-for="login" class="text-danger"></span>
+
+                    <div class="form-group">
+                        <label asp-for="password" class="control-label"></label>
+                        <input asp-for="password" class="form-control" type="Password" placeholder="Password" style="width: 50%; margin: 2px; border-radius:20px; text-align:center; color:wheat; background-color: black;" />
+                    </div>
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                @if (ViewData["errorMessage"] != null)
+                {
+                    <p style="color:red;">@ViewData["errorMessage"]</p>
+                }
+                <p>If you have account <a asp-action="Login">LogIn</a></p>
+
+                <div class="form-group" style="width: 100%; flex-wrap:wrap; align-content:center; justify-content:center;">
+                    <button type="submit" name="action" style="width: 95%; border-radius:20px; color:wheat; background-color: gray;">
+                        Register
+                    </button>
+                </div>
+
+            </form>
+        </div>
+     </div>
+

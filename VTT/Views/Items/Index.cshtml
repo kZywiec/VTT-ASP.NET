@@ -1,0 +1,86 @@
+﻿@model IEnumerable<VTT.Models.Entities.Item>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutLists";
+    var characterName = ViewData["CharacterName"];
+}
+
+<div style="display:flex; justify-content:center;">
+    <h1 style="border-bottom: 2px solid; border-radius:25px; padding-left:0px; padding-right:0px; text-align:center; font-size:50px;">
+        • Inventory Of @characterName •
+    </h1>
+</div>
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.availability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.concealment)
+            </th>
+            <th>
+                <a asp-action="Create"> Add Item </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.availability.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.concealment.name)
+            </td>
+            <td>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/quill-ink.svg" />
+                    </a>
+
+                    <a asp-action="Details" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/skoll/read.svg" />
+                    </a>
+
+                    <a asp-action="Delete" asp-route-id="@item.id">
+                        <img style="width:25px; height:25px;" src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/harry-potter-skull.svg" />
+                    </a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

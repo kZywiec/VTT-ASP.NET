@@ -11,14 +11,14 @@ namespace Test1
         [TestMethod]
         public void CalculateStats()
         {
-            Character character = new(1);
+            Character character = new();
 
             character.intelligence = 10;
-            character.reflexes = 10;
+            character.reflex = 10;
             character.dexterity = 10;
             character.body = 10;
             character.speed = 10;
-            character.emphaty = 10;
+            character.empathy = 10;
             character.craft = 10;
             character.will = 10;
             character.luck = 10;

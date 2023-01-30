@@ -1,0 +1,134 @@
+﻿@model VTT.Models.Entities.Character
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_LayoutForms";
+}
+
+<h1>Edit @Model.name</h1>
+<hr />
+<form asp-action="Edit" method="post" style="display:flex; flex-direction:column; justify-content:center; align-content:center; flex-wrap:wrap;">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <h4>Character Informations</h4>
+    <div>
+        <div class="form-group">
+            <label asp-for="name" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+            <input asp-for="name" class="form-control" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="sex" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+            <select asp-for="sex" class="form-control">
+                <option value='Male'>M</option>
+                <option value='Female'>F</option>
+            </select>
+            <span asp-validation-for="sex" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="age" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem;"></label>
+            <input asp-for="age" class="form-control" />
+            <span asp-validation-for="age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="race" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem;"></label>
+            <select asp-for="race" class="form-control">
+                <option value='Elf'>Elf</option>
+                <option value='Half-Elf'>Half-Elf</option>
+                <option value='Halfling'>Halfling</option>
+                <option value='Dwarf'>Dwarf</option>
+                <option value='Witcher'>Witcher</option>
+                <option value='Human'>Human</option>
+                <option value='Gnome'>Witcher</option>
+                <option value='Doppler'>Human</option>
+                <option value='Vran'>Witcher</option>
+                <option value='Werebbubb'>Human</option>
+            </select>
+            <span asp-validation-for="race" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="social_standing" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem;"></label>
+            <select asp-for="social_standing" class="form-control">
+                <option value='Equal'>Equal</option>
+                <option value='Hated'>Hated</option>
+                <option value='Tolerated'>Tolerated</option>
+                <option value='Hated & Feared'>Hated & Feared</option>
+            </select>
+            <span asp-validation-for="social_standing" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="homeland" class="control-label" style="width:70%; text-align:center; padding: 0.375rem 0.75rem;"></label>
+            <input asp-for="homeland" class="form-control" />
+            <span asp-validation-for="homeland" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+    <h4>Statistics</h4>
+    <div>
+        <table>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="intelligence" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="intelligence" class="form-control" />
+                    <span asp-validation-for="intelligence" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="reflex" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="reflex" class="form-control" />
+                    <span asp-validation-for="reflex" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="dexterity" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="dexterity" class="form-control" />
+                    <span asp-validation-for="dexterity" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="body" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="body" class="form-control" />
+                    <span asp-validation-for="body" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="empathy" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="empathy" class="form-control" />
+                    <span asp-validation-for="empathy" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="craft" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="craft" class="form-control" />
+                    <span asp-validation-for="craft" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="will" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="will" class="form-control" />
+                    <span asp-validation-for="will" class="text-danger"></span>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <label asp-for="luck" class="control-label" style="width:70%;  text-align:center; padding: 0.375rem 0.75rem;"></label>
+                    <input asp-for="luck" class="form-control" />
+                    <span asp-validation-for="luck" class="text-danger"></span>
+                </div>
+
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Edit" class="btn btn-primary" style="width:100%;" />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

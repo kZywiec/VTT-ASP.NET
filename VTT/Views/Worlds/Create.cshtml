@@ -1,0 +1,37 @@
+﻿@model VTT.Models.Entities.World
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_LayoutForms";
+}
+
+<h1>Create New World</h1>
+<hr />
+
+
+<form asp-action="Create" method="post" style="display:flex; flex-direction:column; justify-content:center; align-content:center; flex-wrap:wrap;">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="title" class="control-label"style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+        <input asp-for="title" class="form-control" />
+        <span asp-validation-for="title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="description" class="control-label"style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+        <input asp-for="description" class="form-control" />
+        <span asp-validation-for="description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="nextSessionDate" class="control-label"style="width:70%; text-align:center; padding: 0.375rem 0.75rem; padding: 0.375rem 0.75rem;"></label>
+        <input asp-for="nextSessionDate" class="form-control" />
+        <span asp-validation-for="nextSessionDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" style="width:100%;" />
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
