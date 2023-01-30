@@ -152,12 +152,21 @@ namespace VTT.Controllers
                     existingItem.type_id = item.type_id;
                     existingItem.availability_id = item.availability_id;
                     existingItem.concealment_id = item.concealment_id;
-   
+
 
                     _context.Item.Update(existingItem);
                     await _context.SaveChangesAsync();
-
-                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ItemExists(item.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
