@@ -60,6 +60,8 @@ W Przypadku Postaci każda z nich posiada niewielką ikono skrzyni odwołującą
 
 Każdy świat przypisany jest do użytkownika, który go stworzył.
 Do każdego świata są przypisani jego mieszkańcy (Postacie) a każda z nich posiada własną listę posiadanych przedmiotów.
+![baza](https://user-images.githubusercontent.com/92109351/215628235-fa593d1c-9e3d-4d22-aa8f-aaf7d494cf67.png)
+
 ## Wykorzystane pakiety
 
 - Microsoft.EntityFrameworkCore
